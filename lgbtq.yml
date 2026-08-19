@@ -1,0 +1,57 @@
+##############################################################################
+#                     Collection LGBTQ+ — Kometa / Quickstart                #
+#                                                                            #
+#  Fichier unique, à assigner AUX DEUX bibliothèques (Movies + TV Shows).    #
+#  Les listes Trakt utilisées contiennent films ET séries : chaque           #
+#  bibliothèque ne retiendra que ce qui la concerne, le reste est ignoré.    #
+#                                                                            #
+#  Aucun ajout à Radarr / Sonarr : collection strictement locale.            #
+#                                                                            #
+#  Prérequis : bloc `trakt:` (client_id / client_secret / pin) configuré     #
+#  dans le config.yml de Kometa, sinon le builder trakt_list échouera.       #
+##############################################################################
+
+collections:
+
+  LGBTQ+:
+    summary: |
+      Films et séries mettant en scène des personnages ou des récits gays, lesbiens,
+      bisexuels, trans et queer. Sélection agrégée depuis plusieurs listes
+      communautaires Trakt.
+
+    # ---------------------------------------------------------------- Sources
+    trakt_list:
+      # LGBT+ : Lesbian, Gay, Bisexual, Transgender Movies & TV Shows (la plus grosse liste de Trakt)
+      - https://trakt.tv/users/igiorgis/lists/lgbt-lesbian-gay-bisexual-transgender-movies-tv-shows-the-biggest-list-on-trakt
+      # 3500+ Gay (LGBT) Themed Movies & TV Shows
+      - https://trakt.tv/users/j-mcgarv/lists/lgbt-gay-themed-movies
+      # LGBT TV Shows, Movies and Short Films
+      - https://trakt.tv/users/joaorabit/lists/lgbt-tv-shows-movies-and-short-films
+      # Gay Movies and TV Shows
+      - https://trakt.tv/users/gus210/lists/gay-movies-and-tv-shows
+      # LGBT+ — TV Shows and Movies with queer content
+      - https://trakt.tv/users/eragos/lists/gay-movies-tv-shows
+      # Gay Movies
+      - https://trakt.tv/users/mrfawkes/lists/gay-movies
+
+    # -------------------------------------------------- Comportement collection
+    sync_mode: sync              # retire de la collection ce qui sort des listes
+    build_collection: true
+    minimum_items: 1
+    collection_order: release    # alpha | release | custom
+    sort_title: "!07_LGBTQ+"
+
+    # ------------------------------------------------------------- Visibilité
+    visible_library: true
+    visible_home: false
+    visible_shared: false
+
+    # ------------------------------------------- Pas d'ajout des titres manquants
+    radarr_add_missing: false
+    sonarr_add_missing: false
+
+    # ------------------------------------------------------------------ Visuel
+    # Décommente et pointe vers une image de ton NAS ou une URL si tu veux
+    # forcer une affiche personnalisée :
+    # url_poster: https://.../lgbtq.jpg
+    # file_poster: config/posters/lgbtq.jpg
