@@ -1,0 +1,92 @@
+##############################################################################
+#            Collection Comédies musicales & Broadway — Kometa               #
+#                                                                            #
+#  Fichier unique, à assigner AUX DEUX bibliothèques (Movies + TV Shows).    #
+#  Objectif : films et séries chantés/dansés, adaptations de comédies         #
+#  musicales, captations de spectacles Broadway / West End.                  #
+#  EXCLU : captations de concerts et tournées d'artistes.                    #
+#                                                                            #
+#  Aucun ajout à Radarr / Sonarr : collection strictement locale.            #
+#                                                                            #
+#  Prérequis : bloc `trakt:` configuré dans le config.yml de Kometa.         #
+##############################################################################
+
+collections:
+
+  Comédies musicales & Broadway:
+    summary: |
+      Films et séries où l'on chante et où l'on danse : comédies musicales,
+      adaptations de spectacles Broadway et West End, captations de scène.
+      Les concerts et captations de tournées ne sont pas inclus.
+
+    # ------------------------------------------------------- Sources : Trakt
+    trakt_list:
+      # Tv series, shows, movies with song and dance
+      - https://trakt.tv/users/bgodonus/lists/musicals
+      # Film & TV • Music, Musicals, & Broadway
+      - https://trakt.tv/users/andotherloves/lists/film-tv-music-musicals-broadway
+      # Musicals
+      - https://trakt.tv/users/clagex/lists/musicals
+      # Must Watch Musicals
+      - https://trakt.tv/users/schmoogie/lists/must-watch-musicals
+
+    # ------------------------------------ Source : genres déjà présents dans Plex
+    # Récupère tout ce que Plex a déjà tagué Musical / Musique
+    plex_search:
+      any:
+        genre:
+          - Musical
+          - Music
+
+    # ------------------------------------------------- Source : recherche IMDb
+    # Complète les titres que Plex aurait mal tagués
+    imdb_search:
+      type:
+        - movie
+        - tv_series
+        - tv_miniseries
+      genre: musical
+      sort_by: num_votes.desc
+      limit: 500
+
+    # --------------------------------------------- Exclusion des concerts/tournées
+    # S'applique à l'ensemble des sources ci-dessus
+    filters:
+      title.not:
+        - Concert
+        - Live at
+        - Live in
+        - Live from
+        - Live on Stage
+        - Live on Tour
+        - World Tour
+        - Farewell Tour
+        - Unplugged
+        - En concert
+        - Tournée
+
+      # Optionnel : coupe aussi les documentaires musicaux et captations
+      # documentaires qui passeraient à travers le filtre de titre.
+      # Attention, cela retire aussi les docs sur les comédies musicales.
+      # genre.not:
+      #   - Documentary
+
+    # -------------------------------------------------- Comportement collection
+    sync_mode: sync
+    build_collection: true
+    minimum_items: 1
+    collection_order: release
+    sort_title: "!08_Comedies_musicales"
+
+    # ------------------------------------------------------------- Visibilité
+    visible_library: true
+    visible_home: false
+    visible_shared: false
+
+    # ------------------------------------------- Pas d'ajout des titres manquants
+    radarr_add_missing: false
+    sonarr_add_missing: false
+
+    # ------------------------------------------------------------------ Visuel
+    # url_poster: https://.../musicals.jpg
+    # file_poster: config/posters/musicals.jpg
