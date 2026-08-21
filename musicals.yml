@@ -42,7 +42,7 @@ collections:
       type:
         - movie
         - tv_series
-        - tv_miniseries
+        - tv_mini_series
       genre: musical
       sort_by: num_votes.desc
       limit: 500
