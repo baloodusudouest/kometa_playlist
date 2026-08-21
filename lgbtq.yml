@@ -23,14 +23,10 @@ collections:
     trakt_list:
       # LGBT+ : Lesbian, Gay, Bisexual, Transgender Movies & TV Shows (la plus grosse liste de Trakt)
       - https://app.trakt.tv/users/igiorgis/lists/lgbt-lesbian-gay-bisexual-transgender-movies-tv-shows-the-biggest-list-on-trakt?mode=media
-      # 3500+ Gay (LGBT) Themed Movies & TV Shows
-      - https://app.trakt.tv/users/j-mcgarv/lists/lgbt-gay-themed-movies?mode=media
       # LGBT TV Shows, Movies and Short Films
       - https://app.trakt.tv/users/joaorabit/lists/lgbt-tv-shows-movies-and-short-films?mode=media
       # Gay Movies and TV Shows
       - https://app.trakt.tv/users/gus210/lists/gay-movies-and-tv-shows?mode=media
-      # LGBT+ — TV Shows and Movies with queer content
-      - https://app.trakt.tv/users/eragos/lists/gay-movies-tv-shows?mode=media
       # Gay Movies
       - https://trakt.tv/users/mrfawkes/lists/gay-movies
 
