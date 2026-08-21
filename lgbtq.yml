@@ -46,9 +46,6 @@ collections:
     visible_home: false
     visible_shared: false
 
-    # ------------------------------------------- Pas d'ajout des titres manquants
-    radarr_add_missing: false
-    sonarr_add_missing: false
 
     # ------------------------------------------------------------------ Visuel
     # Décommente et pointe vers une image de ton NAS ou une URL si tu veux
