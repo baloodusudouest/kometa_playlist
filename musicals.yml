@@ -83,9 +83,6 @@ collections:
     visible_home: false
     visible_shared: false
 
-    # ------------------------------------------- Pas d'ajout des titres manquants
-    radarr_add_missing: false
-    sonarr_add_missing: false
 
     # ------------------------------------------------------------------ Visuel
     # url_poster: https://.../musicals.jpg
