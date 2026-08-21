@@ -25,8 +25,6 @@ collections:
       - https://trakt.tv/users/bgodonus/lists/musicals
       # Film & TV • Music, Musicals, & Broadway
       - https://trakt.tv/users/andotherloves/lists/film-tv-music-musicals-broadway
-      # Musicals
-      - https://trakt.tv/users/clagex/lists/musicals
       # Must Watch Musicals
       - https://trakt.tv/users/schmoogie/lists/must-watch-musicals
 
@@ -36,7 +34,7 @@ collections:
       any:
         genre:
           - Musical
-          - Music
+          - Musique
 
     # ------------------------------------------------- Source : recherche IMDb
     # Complète les titres que Plex aurait mal tagués
